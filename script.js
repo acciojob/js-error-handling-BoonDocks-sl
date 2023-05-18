@@ -1,4 +1,3 @@
-//your code here
 class OutOfRangeError extends Error {
   constructor(arg) {
     super(`Expression should only consist of integers and +-/* characters and not ${arg}`);
@@ -19,10 +18,10 @@ function evalString(expr) {
       throw new InvalidExprError();
     }
     if (/^[\/\*\+]/.test(expr)) {
-      throw new SyntaxError("Expression should not start with invalid operator");
+      throw new SyntaxError("Expression should not start with an invalid operator");
     }
     if (/[\*\/\+\-]$/.test(expr)) {
-      throw new SyntaxError("Expression should not end with invalid operator");
+      throw new SyntaxError("Expression should not end with an invalid operator");
     }
     return eval(expr);
   } catch (error) {
